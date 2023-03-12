@@ -6,6 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <title>High Adventures | Animals Page</title>
+    <style>
+        form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+form li + li {
+  margin-top: 1em;
+}
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+input,
+textarea {
+  font: 1em sans-serif;
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+input:focus,
+textarea:focus {
+  border-color: #000;
+}
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+.button {
+  padding-left: 90px; 
+}
+button {
+  margin-left: 0.5em;
+}
+    </style>
 </head>
 <body>
     <div id="content">
@@ -21,13 +64,64 @@
             </nav>
         </header>
     <main>
-        <p></p>
-        <p>This is information about the animals that they will see, images of them, warnings, and what trips are the most likely to see the animals.</p>
-        <img class="wireframe" src="styles/images/page1wireframe.jpg" alt="Animals Page Wireframe" />
+        <h1>Animals</h1>
+        <p>There are many animals in our parks! From elk to fish to bears, you can see a huge variety of animals! These are the three most common animals you can see around our park.</p>
+        <div class="home-grid">
+            <section class="bear-card">
+                <img class="card-img" src="styles/images/bear.jpg" alt="bear picture" >
+                <h2>Bear</h2>
+                <p>There are a lot of bears throughout our parks. They are very shy and would like to be left alone, but they try to stay close to home.</p>
+            </section>
+            <section class="elk-card">
+                <img class="card-img" src="styles/images/elk.jpg" alt="elk picture">
+                <h2>Elk</h2>
+                <p>These animals are very skiddish. They are very scared of humans and will try to run away. If you get to hear their bugle then you will be shocked how loud it is!</p>
+            </section>
+            <section class="ram-card">
+                <img class="card-img" src="https://byui-wdd.github.io/wdd130/resources/images/bighorn-ram.jpg" alt="fish picture">
+                <h2>Ram</h2>
+                <p>These beasts can ascend walls as steep as you can think! They are usually on top of hills and mountains, but are seen many times trying to drink water.</p>
+            </section>
+        </div>
+        
+        <form action="/my-handling-form-page" method="post">
+            <ul>
+              <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" />
+              </li>
+              <li>
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" name="user_email" />
+              </li>
+              <li>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message"></textarea>
+              </li>
+              <li class="button">
+                <button type="submit">Send your message</button>
+              </li>
+            </ul>
+          </form>
+
+          <h3>Wireframe</h3>
+          <img class="wireframe" src="styles/images/page1wireframe.jpg" alt="Animals Page Wireframe" />
     </main>
     <footer>
-        <p>Contact information and pictures will be here</p>
+        <h3>Contact Information</h3>
+        <p>Phone Number: 208-111-2222</p>
+        <p>Email: highadventureservice@gmail.com</p>
     </footer>
+    <script>
+        const feedbackElement = document.getElementById('feedback');
+        const formElement = document.forms[0];
+        formElement.addEventListener('submit', function(e) {
+            e.preventDefault();
+            feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+            feedbackElement.style.display = "block";
+            document.body.classList.toggle('moveDown');
+        });
+    </script>
     </div>
 </body>
 </html>

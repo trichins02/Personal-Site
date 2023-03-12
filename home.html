@@ -6,6 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <title>High Adventures | Home Page</title>
+    <style>
+        form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+form li + li {
+  margin-top: 1em;
+}
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+input,
+textarea {
+  font: 1em sans-serif;
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+input:focus,
+textarea:focus {
+  border-color: #000;
+}
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+.button {
+  padding-left: 90px; 
+}
+button {
+  margin-left: 0.5em;
+}
+    </style>
 </head>
 <body>
     <div id="content">
@@ -21,13 +64,53 @@
             </nav>
         </header>
     <main>
-        <p>This is where the content and pictures will be for the webpage.</p>
-        <p>Information about the company and website, images, overview of what we do and our statement is.</p>
+        <h1>High Adventure Guide Service</h1>
+        <h3>Welcome to the official page of High Adventure Guide Service!</h3>
+        <p>This is where you and your famiy find the adventure of a lifetime!</p>
+        <h3>Mission Statement</h3>
+        <p>Our mission is to help everyone have the time of their lives. As they explore, we encourage safety and protection to everyone and everything.</p>
+        <img src="styles/images/nature.jpg" alt="nature picture" width="400px" height="500px">
+        <p>There are so many things to explore in the great outdoors including sites, animals, etc. Explore our site to find out more information!</p>
+        
+        <form action="/my-handling-form-page" method="post">
+            <ul>
+              <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" />
+              </li>
+              <li>
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" name="user_email" />
+              </li>
+              <li>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message"></textarea>
+              </li>
+              <li class="button">
+                <button type="submit">Send your message</button>
+              </li>
+            </ul>
+          </form>
+
+        <img src="styles/images/waterfall.jpg" alt="waterfall picture" width="400px" height="500px">
+        <h3>Wireframe</h3>
         <img class="wireframe" src="styles/images/homepagewireframe.jpg" alt="Home Page Wireframe" />
     </main>
     <footer>
-        <p>Contact information and pictures will be here</p>
+        <h3>Contact Information</h3>
+        <p>Phone Number: 208-111-2222</p>
+        <p>Email: highadventureservice@gmail.com</p>
     </footer>
+    <script>
+        const feedbackElement = document.getElementById('feedback');
+        const formElement = document.forms[0];
+        formElement.addEventListener('submit', function(e) {
+            e.preventDefault();
+            feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+            feedbackElement.style.display = "block";
+            document.body.classList.toggle('moveDown');
+        });
+    </script>
     </div>
 </body>
 </html>
