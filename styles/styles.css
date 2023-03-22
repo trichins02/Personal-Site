@@ -38,6 +38,13 @@ header {
 main {
     color: white;
 }
+p, h1, h2, h3, h4 {
+    background-color: #FFE8D4;
+    padding: 5px;
+    border: 5px solid #136F63;
+    width: fit-content;
+    text-align: center;
+}
 .parallax {
     background-image: url("images/forest.jpg");
     min-height: 500px;
@@ -45,7 +52,12 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
+.mainpics {
+    width: 400px;
+    height: 500px;
+    align-items: center;
+}
 .wireframe {
     width: 400px;
     height: 500px;
