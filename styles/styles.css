@@ -36,8 +36,16 @@ header {
     grid-template-columns: 150px auto;
 }
 main {
-    color: black;
+    color: white;
 }
+.parallax {
+    background-image: url("images/forest.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 .wireframe {
     width: 400px;
     height: 500px;
@@ -46,7 +54,7 @@ main {
 .home-grid {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    color: black;
+    color: white;
 }
 .bear-card {
     margin: 200px 0;
