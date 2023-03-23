@@ -16,6 +16,12 @@ nav a:hover {
     background-color: #E4DFDA;
     color: black;
 }
+header {
+    background-color: #136F63;
+    color: black;
+    display: grid;
+    grid-template-columns: 150px auto;
+}
 .button-box {
     text-align: center;
 }
@@ -29,21 +35,14 @@ body {
     margin: 0;
     padding: 0;
 }
-header {
-    background-color: #136F63;
+#textcontent {
     color: black;
-    display: grid;
-    grid-template-columns: 150px auto;
-}
-main {
-    color: white;
-}
-p, h1, h2, h3, h4 {
     background-color: #FFE8D4;
     padding: 5px;
     border: 5px solid #136F63;
     width: fit-content;
     text-align: center;
+    margin: 10px auto;
 }
 .parallax {
     background-image: url("images/forest.jpg");
@@ -109,6 +108,27 @@ p, h1, h2, h3, h4 {
 }
 .card-img {
     width: 100%;
+}
+.accordion {
+    background-color: #FFE8D4;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    color: black;
+    display: none;
+    overflow: hidden;
 }
 footer {
     background-color: #136F63;

@@ -52,7 +52,7 @@ button {
   <div class="parallax">
     <div id="content">
         <header>
-            <a id="logo_link" href="home.html">
+            <a id="logo_link" href="index.html">
                 <img class="logo" src="styles/images/logo.png" alt="Dry Oar Logo">
             </a>
             <nav>
@@ -63,13 +63,18 @@ button {
             </nav>
         </header>
     <main>
+      <div id="textcontent">
         <h1>High Adventure Guide Service</h1>
         <h2>Welcome to the official page of High Adventure Guide Service!</h2>
         <h4>This is where you and your famiy find the adventure of a lifetime!</h4>
+      </div>
         <img class="mainpics" src="styles/images/nature.jpg" alt="nature picture">
+      <div id="textcontent">
         <h2>Mission Statement</h2>
         <h4>Our mission is to help everyone have the time of their lives. As they explore, we encourage safety and protection to everyone and everything.</h4>
         <p>There are so many things to explore in the great outdoors including sites, animals, etc. Explore our site to find out more information!</p>
+      </div>
+        <img class="mainpics" src="styles/images/waterfall.jpg" alt="waterfall picture">
         <form action="/my-handling-form-page" method="post">
             <ul>
               <li>
@@ -89,10 +94,21 @@ button {
               </li>
             </ul>
           </form>
-
-        <img class="mainpics" src="styles/images/waterfall.jpg" alt="waterfall picture">
-        <h3>Wireframe</h3>
-        <img class="wireframe" src="styles/images/homepagewireframe.jpg" alt="Home Page Wireframe">
+          <div id="textcontent">
+            <h2>Contact us at any of these methods of contact!</h2>
+          </div>
+          <button class="accordion">Phone Number</button>
+          <div class="panel">
+            <p>208-111-2222</p>
+          </div>
+          <button class="accordion">Email</button>
+          <div class="panel">
+            <p>highadventureservice@gmail.com</p>
+          </div>
+          <button class="accordion">Facebook, Instagram, Twitter</button>
+          <div class="panel">
+            <p>@highadventureservice</p>
+          </div>
     </main>
     <footer>
         <h3>Contact Information</h3>
@@ -108,6 +124,19 @@ button {
             feedbackElement.style.display = "block";
             document.body.classList.toggle('moveDown');
         });
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+        panel.style.display = "none";
+        } else {
+        panel.style.display = "block";
+        }
+        });
+        }
     </script>
     </div>
   </div>
