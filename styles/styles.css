@@ -35,7 +35,7 @@ body {
     margin: 0;
     padding: 0;
 }
-#textcontent {
+.textcontent {
     color: black;
     background-color: #FFE8D4;
     padding: 5px;
